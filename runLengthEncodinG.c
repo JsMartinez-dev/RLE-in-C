@@ -99,12 +99,16 @@ char* leer_cadena_dinamica() {
 
 int main(){
     char mode[7];
+    FILE *fp = fopen("archi.txt","r");
+
+  
+    if(fp==NULL){
+        return 1;
+    }
     
-    printf("\n:");
-    scanf("%s", mode);
-    
-    // Limpiar el \n que genera el ENTER
-    while(getchar() != '\n');
+    fscanf(fp,"%s",mode); //Guardamos primera linea de codigo
+
+
     
     char *cadena = leer_cadena_dinamica();
     if (cadena == NULL) {
