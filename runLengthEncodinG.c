@@ -40,7 +40,7 @@ void rle_decode(char *s){
             }
             tempoDigito = atoi(cadenaTemp);
             imprimirTexto(caracterTemporal,tempoDigito);
-            cadenaTemp[0] = '\0'; //Para que elimine basura ahí
+            cadenaTemp[0] = '\0'; //Para que borre lo que aguardo anteriormente 
             i--;
         }
     }
@@ -116,7 +116,6 @@ int main(){
     }else if(strcmp(mode,"DECODE")==0){
         rle_decode(cadena);
     }else{
-        printf("Modo no válido. Use ENCODE o DECODE\n");
         free(cadena);
         return 1;
     }
